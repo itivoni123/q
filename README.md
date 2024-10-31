@@ -24,7 +24,7 @@ This application captures video from the webcam, serves it on a local Flask serv
 
 3. Build the Docker Image:
    ```bash
-   docker build -t your_image_name .
+   docker build -t web_cam .
 
 
 4. Run the Tests(Command Line):
