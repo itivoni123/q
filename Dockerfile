@@ -1,8 +1,13 @@
-# Use an official Python runtime as a parent image
-FROM python:3.10-slim
+# Use Ubuntu 20.04 as the base image
+FROM ubuntu:20.04
 
-# Install required system libraries for OpenCV
+# Set non-interactive mode for apt-get to avoid prompts
+ARG DEBIAN_FRONTEND=noninteractive
+
+# Install Python and required system libraries for OpenCV
 RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
     libgl1-mesa-glx \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
@@ -14,10 +19,10 @@ WORKDIR /app
 COPY . .
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Install pytest for testing
-RUN pip install pytest
+RUN pip3 install pytest
 
 # Make port 5000 available to the world outside this container
 EXPOSE 5000

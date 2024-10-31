@@ -31,8 +31,25 @@ This application captures video from the webcam, serves it on a local Flask serv
 
 5. Run the Tests(Command Line):
    ```bash
-   Run: pytest -v -s -k test_camera_access
-   Run: pytest -v -s -k test_index
+   docker run --rm web_cam pytest
+   Run: pytest -v -s -k test_camera_access - Fail
+   Run: pytest -v -s -k test_index - PASS 
+   
+
+### Running Docker Containers
+When you run a Docker container using the Ubuntu image, it won't have direct access to your Mac's hardware (like cameras). If you want to use the camera in a Docker container, the following points are important:
+
+1. **Camera Access**:
+   Direct access to the camera from Docker on macOS is not supported because Docker for Mac runs containers in a virtualized environment. You won't be able to use `/dev/video*` devices directly.
+
+2. **Virtual Camera**:
+   If you want to test camera functionality without physical access, consider using a virtual camera solution that can simulate video input. Unfortunately, creating virtual video devices in Docker on macOS is more complex and often not feasible.
+
+3. **Testing Outside of Docker**:
+   If your primary goal is to test camera functionality, consider running your application directly on macOS without Docker. This way, you can access the camera directly from your application.
+
+### Summary
+Run the commands on your macOS terminal to check for camera recognition. Since Docker on macOS does not allow direct access to hardware like cameras, consider testing your application outside of Docker or look into virtual camera solutions that are compatible with macOS. If you have further questions, feel free to ask!
    
 ## Tests Description
 
