@@ -50,3 +50,8 @@ This application captures video from the webcam, serves it on a local Flask serv
 3. **Content Check**: The test verifies that the response contains the text "Webcam Feed", ensuring the correct content is rendered on the page.
 
 These tests ensure both the functionality of the camera access and the proper rendering of the web application.
+
+## References
+1. **Flask Documentation**
+2. **OpenCV Python Documentation**
+3. **pytest Documentation**
