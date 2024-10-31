@@ -21,21 +21,22 @@ This application captures video from the webcam, serves it on a local Flask serv
    python3 -m venv venv
    source venv/bin/activate
 
-3. Install Dependencies:
-   ```bash
-   pip install -r requirements.txt
 
-4. Run the Application:
+3. Build the Docker Image:
    ```bash
-   python app.py
+   docker build -t your_image_name .
 
+
+4. Run the Tests(Command Line):
+   ```bash
+   docker run --rm web_cam pytest 
+   
 5. Run the Tests(Command Line):
    ```bash
-   docker run --rm web_cam pytest
+   docker run --rm your_image_name pytest
    Run: pytest -v -s -k test_camera_access - Fail
-   Run: pytest -v -s -k test_index - PASS 
+   Run: pytest -v -s -k test_index - PASS
    
-
 ### Running Docker Containers
 When you run a Docker container using the Ubuntu image, it won't have direct access to your Mac's hardware (like cameras). If you want to use the camera in a Docker container, the following points are important:
 
