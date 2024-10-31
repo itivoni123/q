@@ -31,7 +31,6 @@ This application captures video from the webcam, serves it on a local Flask serv
 
 5. Run the Tests(Command Line):
    ```bash
-   Navigate to q
    Run: pytest -v -s -k test_camera_access
    Run: pytest -v -s -k test_index
    
