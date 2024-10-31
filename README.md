@@ -1,4 +1,4 @@
-# Webcam Server
+# q.ai Task
 
 ## Description
 This application captures video from the webcam, serves it on a local Flask server, and displays the stream on a web page.
@@ -13,7 +13,7 @@ This application captures video from the webcam, serves it on a local Flask serv
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd webcam_server
+   cd q
    
 
 2. Set Up a Virtual Environment:
