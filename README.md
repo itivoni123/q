@@ -34,8 +34,8 @@ This application captures video from the webcam, serves it on a local Flask serv
 5. Run the Tests(Command Line):
    ```bash
    docker run --rm your_image_name pytest
-   Run: pytest -v -s -k test_camera_access - Fail
-   Run: pytest -v -s -k test_index - PASS
+   Run: pytest -v -s -k test_camera_access 
+   Run: pytest -v -s -k test_index 
    
 ### Running Docker Containers
 When you run a Docker container using the Ubuntu image, it won't have direct access to your Mac's hardware (like cameras). If you want to use the camera in a Docker container, the following points are important:
